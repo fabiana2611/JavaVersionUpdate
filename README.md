@@ -9,3 +9,5 @@ Links used as reference:
  * http://javatutorialsbyraj.blogspot.com.br/2015/03/java-16-vs-17.html
  * https://docs.oracle.com/javase/7/docs/technotes/guides/vm/multiple-language-support.html
  * https://www.javaworld.com/article/2860079/learn-java/invokedynamic-101.html
+
+PS: Update Java 8 is in progress ...
