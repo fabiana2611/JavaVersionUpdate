@@ -1,6 +1,8 @@
-package br.bia.diff.j7;
+package br.bia.main;
 
 import java.util.Scanner;
+
+import br.bia.diff.j7.NewJava7;
 
 /**
  * Class to build menus 
@@ -18,8 +20,8 @@ public class Menu {
 	public int mainMenu() {
 		System.out.println(
 				  "=== MENU ======== \n"
-				+ "(1) Version 7 	| \n" 
-				+ "(2) Version 8 	| \n" 
+				+ "(7) Version 7 	| \n" 
+				+ "(8) Version 8 	| \n" 
 				+ "(0) exit 	| \n"
 				+ "================= "
 				);
@@ -29,17 +31,20 @@ public class Menu {
 		return read.nextInt();
 	}
 	
+	public int createMenu(NewJava newJava){
+		if(newJava instanceof NewJava7){
+			return menuVersion7();
+		} else {
+			return menuVersion8();
+		}
+	}
+	
 	public int menuVersion7() {
 		System.out.println("\n=== Version 7 === \n"
-				+ "1: equalNullObjetcs \n" 
-				+ "2: genericDeclare \n" 
-				+ "3: stringsInSwitch \n"
-				+ "4: automaticResourceManagement \n"
-				+ "5: numericLiteralsUnderscores \n"
-				+ "6: improvedExceptionHandling \n"
-				+ "7: nioFileWorkingWithPath \n"
-				+ "8: nioFileChangeNotifications \n"
-				+ "9: invokedynamic \n"
+				+ "1: geralExamples \n" 
+				+ "2: nioFile \n"
+				+ "3: nioFileChangeNotifications \n"
+				+ "4: invokedynamic \n"
 				+ "99: <- back to main menu \n"
 				+ "0: exit"
 				);
@@ -53,7 +58,12 @@ public class Menu {
 	
 	public int menuVersion8() {
 		System.out.println("\n=== Version 8 === \n"
-				+ "1: In build \n" 
+				+ "1: Stream \n"
+				+ "2: optional \n" 
+				+ "3: scripts \n" 
+				+ "4: dateTimeApi \n" 
+				+ "5: geralUpdate \n" 
+				+ "6: lambdaExpression\n" 
 				+ "99: <- back to main menu \n" 
 				+ "0: exit"
 				);
