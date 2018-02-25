@@ -1,6 +1,12 @@
 package br.bia.diff.j7;
 
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
+
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -10,7 +16,7 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchEvent.Kind;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
-import static java.nio.file.StandardWatchEventKinds.*;
+import java.util.logging.Logger;
 
 /**
  * Based in: 
@@ -23,10 +29,44 @@ import static java.nio.file.StandardWatchEventKinds.*;
  */
 public class NIOFile {
 
+	private Logger logger = Logger.getAnonymousLogger();
+	
 	private static String HOME = System.getProperty("user.home");
 	private WatchService watchService = null;
 	
-	public void workingWithPath(String fileName) {
+	/**
+	 * V < 7: Resources such as Connections, Files, Input/OutStreams, etc. should be 
+	 * closed manually by the developer by writing bog-standard code. Usually 
+	 * we use a try-finally block to close the respective resources. 
+	 * 
+	 * V7: Declare the resources in the try as follows
+	 */
+	public void automaticResourceManagement(String fileName) {
+		
+		//The try-with-resources Statement
+		try (
+				FileOutputStream fos = new FileOutputStream(fileName);
+				DataOutputStream dos = new DataOutputStream(fos)
+			) {
+
+			dos.writeUTF("Java 7 Block Buster");
+			
+			System.out.println("SUCESS to create file!!!");
+
+		} catch (IOException e) {
+			logger.warning("Error to create file");
+		}
+	}
+	
+	public void nioFileWorkingWithPath(){
+		String fileName = "testeFile.txt";
+		automaticResourceManagement(fileName);
+		workingWithPath(fileName);
+		
+		System.out.println();
+	}
+	
+	private void workingWithPath(String fileName) {
 
 		File file = new File(fileName);
 		System.out.println("File Path:" + file.getPath());
@@ -54,6 +94,7 @@ public class NIOFile {
 	public void fileChangeNotifications(String fileName) {
 
 		System.out.println("### fileChangeNotifications ###");
+		System.out.println("PS> To see results, create, delete or modify the file /testNioFileDir/testeNotification.txt");
 		
 	    try{
 	    	

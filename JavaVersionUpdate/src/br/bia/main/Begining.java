@@ -3,12 +3,13 @@ package br.bia.main;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-import br.bia.diff.j7.Menu;
 import br.bia.diff.j7.NewJava7;
+import br.bia.diff.j8.NewJava8;
 
 /**
- * Class to build options to test some news about java 7
- * @author Fabiana . Araujo
+ * Class to build options to test some news about java 7 and 8
+ * 
+ * @author Fabiana Araujo
  *
  */
 public class Begining {
@@ -32,60 +33,40 @@ public class Begining {
 		
 		switch (mainOption) {
 			
-			case 1:
-				executeVersion7();
-			case 2:
-				executeVersion8();
+			case 7:
+				NewJava7 news7 = new NewJava7();
+				executeVersion(news7);
+				break;
+			case 8:
+				NewJava8 news8 = new NewJava8();
+				executeVersion(news8);
+				break;
 			case 0:
 				exit();
-				break;
 			default:
 				System.out.println("Select a option.");
 		}
 	}
 	
-	private static void executeVersion7(){
+	private static void executeVersion(NewJava news){
 		
-		int option7 = menu.menuVersion7();
-		NewJava7 new7 = new NewJava7();
+		int option = menu.createMenu(news);
 		
 		while (true){	
 			
-			if(option7 == 0){
+			if(option == 0){
 				exit();
-			} else if( option7 == 99 ){
+			} else if( option == 99 ){
 				clear();
 				init();
 				break;
 			} else {
-				new7.executeVersion7(option7);
+				news.executeVersion(option);
 			}
 		
 			System.out.println();
 			System.out.printf("%s", "Select a new option:");
-			option7 = read.nextInt();
-		}
-	}
-	
-	private static void executeVersion8(){
-		
-		int option8 = menu.menuVersion8();
-		
-		while (true){	
-			
-			if(option8 == 0){
-				exit();
-			} else if( option8 == 99 ){
-				clear();
-				init();
-				break;
-			} else {
-				System.out.println("This option is been building...");
-			}
-		
-			System.out.println();
-			System.out.printf("%s", "Select a new option:");
-			option8 = read.nextInt();
+			option = read.nextInt();
 		}
 	}
 

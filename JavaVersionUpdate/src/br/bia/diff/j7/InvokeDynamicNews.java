@@ -43,6 +43,8 @@ public class InvokeDynamicNews {
 			
 			mh.invokeExact();
 			
+			System.out.println();
+			
 		}catch (Throwable e){
 			logger.warning("Error to call static method");
 		}
@@ -73,6 +75,9 @@ public class InvokeDynamicNews {
 					MethodType.methodType(void.class));
 
 			mh.invoke(hw);
+			
+			System.out.println();
+			
 		} catch (Throwable e) {
 			logger.warning("Error to call private method");
 		}
@@ -86,6 +91,9 @@ public class InvokeDynamicNews {
 			MethodHandle mh = lookup.findVirtual(InvokeDynamicNews.class, "publicHello",
 					MethodType.methodType(void.class));
 			mh.invoke(hw);
+			
+			System.out.println();
+			
 		} catch (Throwable e) {
 			logger.warning("Error to call public method");
 		}
