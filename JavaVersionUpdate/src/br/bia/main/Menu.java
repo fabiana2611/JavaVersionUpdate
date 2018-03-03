@@ -20,6 +20,7 @@ public class Menu {
 	public int mainMenu() {
 		System.out.println(
 				  "=== MENU ======== \n"
+				+ "(6) Upgrade   	| \n" 
 				+ "(7) Version 7 	| \n" 
 				+ "(8) Version 8 	| \n" 
 				+ "(0) exit 	| \n"

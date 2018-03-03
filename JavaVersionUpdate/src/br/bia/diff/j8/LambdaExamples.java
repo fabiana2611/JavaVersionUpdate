@@ -63,7 +63,7 @@ public class LambdaExamples {
 	
 	public void singleParam(){
 		 // lambda expression with single parameter num
-    	MyFunctionalInterface2 f = (num) -> num+5;
+		MyFunctionalInterface2 f = (num) -> num+5;
         System.out.println(f.incrementByFive(22));
         
         System.out.println();
