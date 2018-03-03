@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import br.bia.diff.j7.NewJava7;
 import br.bia.diff.j8.NewJava8;
+import br.bia.upgrade.UpgradeExamples;
 
 /**
  * Class to build options to test some news about java 7 and 8
@@ -33,7 +34,10 @@ public class Begining {
 		
 		switch (mainOption) {
 			
-			case 7:
+			case 6:
+				UpgradeExamples.main(null);
+				break;	
+		case 7:
 				NewJava7 news7 = new NewJava7();
 				executeVersion(news7);
 				break;
@@ -41,6 +45,7 @@ public class Begining {
 				NewJava8 news8 = new NewJava8();
 				executeVersion(news8);
 				break;
+			
 			case 0:
 				exit();
 			default:
