@@ -1,11 +1,13 @@
 package br.bia.upgrade.objective.language;
 
 /**
- * 
- * Map
- * List
- * Switch
- * Numeric Literal
+ * Objective 1: Language Enhancements
+ * Develop code that uses String objects in the switch statement, 
+ * binary literals, and numeric literals, including underscores in literals
+ * - Map
+ * - List
+ * - Switch
+ * - Numeric Literal
  * 
  * http://ocpj8.javastudyguide.com/ch31.html
  * 

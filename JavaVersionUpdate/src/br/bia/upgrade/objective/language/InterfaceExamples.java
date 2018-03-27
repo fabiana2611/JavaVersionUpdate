@@ -1,6 +1,9 @@
 package br.bia.upgrade.objective.language;
 
 /**
+ * Objective 1: Language Enhancements
+ * Use static and default methods of an interface including inheritance rules for a default method
+ * 
  * - An interface has either public or default accessibility
  * - Interfaces are abstract by default (you don't have to specify it)
  * - You can't instantiate an interface directly, it has to be implemented by a class to use it.

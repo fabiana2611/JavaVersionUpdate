@@ -6,9 +6,10 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
- * computeIfAbsent
- * computeIfPresent
- * merge
+ * Objective 1: Language Enhancements [Map]
+ * - computeIfAbsent
+ * - computeIfPresent
+ * - merge
  * 
  * Main references:
  * Oracle® Certified Professional Java® SE 8 Programmer II Study Guide
