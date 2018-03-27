@@ -1,9 +1,7 @@
 package br.bia.upgrade;
 
-import java.util.ArrayList;
-
+import br.bia.upgrade.objective.concurrency.ConcurrencyObjectives;
 import br.bia.upgrade.objective.lambda.FunctionalInterfacesExamples;
-import br.bia.upgrade.objective.language.CollectionNewsExamples;
 import br.bia.upgrade.objective.language.LanguageEnhancementsObjectives;
 
 /**
@@ -27,11 +25,13 @@ public class UpgradeExamples {
 
 	public static void main(String[] args) {
 		
-		// Objective 1
+		// Objective 1 (OK)
+		System.out.println("\n ----------------- 1. LANGUAGE ENHANCEMENTS OBJECTIVES -----------------\n");
 		LanguageEnhancementsObjectives.init();
 		
 		// Objective 2
-		//Concurrency.init();
+		System.out.println("\n ----------------- 2. CONCURRENCY OBJECTIVES -----------------\n");
+		ConcurrencyObjectives.init();
 		
 		//Objective 3
 		//Localization.init();

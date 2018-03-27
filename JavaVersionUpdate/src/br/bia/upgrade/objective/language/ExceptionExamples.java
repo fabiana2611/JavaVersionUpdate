@@ -6,8 +6,13 @@ import java.io.IOException;
 import java.util.stream.Stream;
 
 /**
+ * Objective 1: Language Enhancements
+ * - Develop code that uses try-with-resources statements, including using classes that 
+ * implement the AutoCloseable interface
+ * - Develop code that handles multiple Exception types in a single catch block
  * 
- * When using a try-with-resources block, catch and finally are optional.
+ * - In a normal try block, the catch and the finally block are optional but either one of the must be present.
+ * - When using a try-with-resources block, catch and finally are optional.
  * 
  * http://ocpj8.javastudyguide.com/ch19.html
  * 

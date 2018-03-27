@@ -5,9 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * removeIf
- * replaceAll
- * forEach
+ * Objective 1: Language Enhancements [List]
+ * 
+ * - removeIf
+ * - replaceAll
+ * - forEach
  * 
  * Main references:
  * Oracle® Certified Professional Java® SE 8 Programmer II Study Guide
