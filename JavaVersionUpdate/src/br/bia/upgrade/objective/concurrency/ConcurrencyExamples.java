@@ -82,6 +82,7 @@ public class ConcurrencyExamples {
 		examples.staticSynchronizedTests();
 		examples.invokAll();
 		examples.fork();
+		examples.addAndPrintItems();
 	}
 
 	// Test 0
@@ -717,7 +718,19 @@ public class ConcurrencyExamples {
 		System.out.println("Sum: "+sum);
 	}
 	
+	// TEst 21
+	public void addAndPrintItems() {
+		try {
+			BlockingDeque<Integer> deque = new LinkedBlockingDeque<>();
+			deque.offer(103);
+			deque.offerFirst(20, 1, TimeUnit.SECONDS);
+			deque.offerLast(85, 7, TimeUnit.HOURS);
+			System.out.print(deque.pollFirst(200, TimeUnit.NANOSECONDS));
+			System.out.print(" " + deque.pollLast(1, TimeUnit.MINUTES));
+		} catch (InterruptedException e) {
+			System.out.println("InterruptedException!!!!");
+		}
+	}
 	
-
 	
 }
